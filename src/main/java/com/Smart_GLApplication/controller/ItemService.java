@@ -9,7 +9,7 @@ import java.util.List;
 import java.util.Map;
 
 @Repository
-public class ItemService implements ItemDao {
+public class ItemService  {
 
     private static Map<String, Item> allItemsList;
     private static Map<String, Item> reqItemsList;
@@ -25,7 +25,7 @@ public class ItemService implements ItemDao {
         allItemsList.put("carb3", new Item(++id, "carb3", "3kg", "citrus3"));
     }
 
-    @Override
+
     public int insertItem(Item item) {
         if(allItemsList.containsKey(item.getId())){
            reqItemsList.put(item.getName(), item);
@@ -39,7 +39,7 @@ public class ItemService implements ItemDao {
         }
     }
 
-    @Override
+
     public List<Item> getAllItems() {
         List<Item> allItems = new ArrayList<>();
         for(String key : allItemsList.keySet()){
@@ -48,7 +48,7 @@ public class ItemService implements ItemDao {
         return allItems;
     }
 
-    @Override
+
     public List<Item> getAllReqItems() {
         List<Item> reqItems = new ArrayList<>();
         for(String key : reqItemsList.keySet()){
@@ -57,7 +57,7 @@ public class ItemService implements ItemDao {
         return reqItems;
     }
 
-    @Override
+
     public int deleteItem(Item item) {
         if(reqItemsList.containsKey(item.getName())){
             reqItemsList.remove(item.getName());
@@ -66,7 +66,7 @@ public class ItemService implements ItemDao {
         return 0;
     }
 
-    @Override
+
     public int updateItem(Item item) {
         if(reqItemsList.containsKey(item.getName())){
             Item curItem = reqItemsList.get(item.getName());
