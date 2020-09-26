@@ -6,8 +6,8 @@ import org.springframework.data.mongodb.core.index.IndexDirection;
 import org.springframework.data.mongodb.core.index.Indexed;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-@Document(collation = "Items")
-public class Item {
+@Document(collection = "Items")
+public class AllItem {
 
     private int id;
     @Id
@@ -17,16 +17,16 @@ public class Item {
     private String quantity;
     private String company;
 
-    public Item(@JsonProperty("id") int id,
-                @JsonProperty("name") String name,
-                @JsonProperty("quality") String quantity,
-                @JsonProperty("company") String company){
+    public AllItem(@JsonProperty("id") int id,
+                   @JsonProperty("name") String name,
+                   @JsonProperty("quality") String quantity,
+                   @JsonProperty("company") String company){
         this.id = id;
         this.name = name;
         this.quantity = quantity;
         this.company = company;
     }
-    public Item(){}
+    public AllItem(){}
 
     public int getId() {
         return id;
