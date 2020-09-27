@@ -6,7 +6,7 @@ import org.springframework.data.mongodb.core.index.IndexDirection;
 import org.springframework.data.mongodb.core.index.Indexed;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-@Document(collection = "Items")
+@Document(collection = "AllItems")
 public class AllItem {
 
     private int id;
@@ -16,16 +16,22 @@ public class AllItem {
     @Indexed(direction = IndexDirection.ASCENDING)
     private String quantity;
     private String company;
+    private String status;
 
     public AllItem(@JsonProperty("id") int id,
                    @JsonProperty("name") String name,
                    @JsonProperty("quality") String quantity,
-                   @JsonProperty("company") String company){
+                   @JsonProperty("company") String company,
+                   @JsonProperty("status") String status){
         this.id = id;
         this.name = name;
         this.quantity = quantity;
         this.company = company;
+        this.status = status;
     }
+
+
+
     public AllItem(){}
 
     public int getId() {
@@ -58,5 +64,13 @@ public class AllItem {
 
     public void setCompany(String company) {
         this.company = company;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
     }
 }
