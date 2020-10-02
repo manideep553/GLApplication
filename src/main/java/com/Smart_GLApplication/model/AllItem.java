@@ -6,6 +6,14 @@ import org.springframework.data.mongodb.core.index.IndexDirection;
 import org.springframework.data.mongodb.core.index.Indexed;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+/**
+ * id: A 4 digit Integer
+ * name: can be any string
+ * quantity: can be any string
+ * status: Can ony be two strings "all"(One of all the items in the list) or "req"(One of the req items)
+ * company: can be any string
+ *
+ */
 @Document(collection = "AllItems")
 public class AllItem {
 
@@ -15,6 +23,7 @@ public class AllItem {
 
     @Indexed(direction = IndexDirection.ASCENDING)
     private String quantity;
+
     private String company;
     private String status;
 
