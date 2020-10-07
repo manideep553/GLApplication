@@ -16,7 +16,7 @@ public class ItemController{
         this.itemService = item;
     }
 
-    @RequestMapping(value = "/insert",method = RequestMethod.PUT, consumes = MediaType.APPLICATION_JSON_VALUE)
+    @PutMapping(value = "/insert", consumes = MediaType.APPLICATION_JSON_VALUE)
     public int insertItem(@RequestBody AllItem item) {
         item.setStatus("req");
         return itemService.insertItem(item);
