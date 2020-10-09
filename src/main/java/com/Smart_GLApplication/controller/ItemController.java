@@ -22,6 +22,7 @@ public class ItemController{
         return itemService.insertItem(item);
     }
 
+
     //todo: if items list is 0 handle the exception
     @GetMapping(value = "/allitems")
     public List<AllItem> getAllItems() {

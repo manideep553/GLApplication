@@ -3,6 +3,7 @@ package com.Smart_GLApplication.controller;
 
 import com.Smart_GLApplication.model.AllItem;
 import com.Smart_GLApplication.model.ItemDao;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
@@ -10,6 +11,7 @@ import java.util.List;
 @Component
 public class ItemService  {
 
+    @Autowired
     private ItemDao itemRepo;
 
 //    public ItemService(ItemDao itemRepo) {
@@ -18,6 +20,7 @@ public class ItemService  {
 
     public List<AllItem> getAllItems() {
         List<AllItem> lis =  itemRepo.findAll();
+        System.out.println("**      helll0       "+lis);
         return lis;
     }
 

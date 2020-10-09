@@ -14,9 +14,9 @@ public class DbSeeder implements CommandLineRunner {
     private ItemDao itemDao;
 
 
-//    public DbSeeder(ItemDao itemDao){
-//        this.itemDao = itemDao;
-//    }
+    public DbSeeder(ItemDao itemDao){
+        this.itemDao = itemDao;
+    }
 
     @Override
     public void run(String... args) throws Exception {
